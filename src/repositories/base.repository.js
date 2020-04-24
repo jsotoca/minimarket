@@ -5,10 +5,16 @@ class BaseRepository{
     async get(id){
         return await this.model.findById(id);
     }
-    async getAll(numPag=1,numSize=5){
+    async getAll(numPag=1,numSize=5,categoria=null){
         const skips = numSize * (numPag-1);
-        return await this.model.find({}).skip(skips).limit(numPag);
+        var buscar = {};
+        if(categoria) buscar = {categoria};
+        return await this.model.find(buscar).skip(skips).limit(numSize);
     }
+    // async getAll(numPag=1,numSize=5){
+    //     const skips = numSize * (numPag-1);
+    //     return await this.model.find().skip(skips).limit(numSize);
+    // }
     async create(entity){
         return await this.model.create(entity);
     }

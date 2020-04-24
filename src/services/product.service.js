@@ -6,9 +6,6 @@ class ProductService extends BaseService{
         super(ProductRepository);
         _ProductRepository = ProductRepository;
     }
-    async getProductsByCategory(category,numPag,numSize){
-        return await _ProductModel.getProductsByCategory(category,numPag,numSize);
-    }
 }
 
 module.exports = ProductService;

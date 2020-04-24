@@ -1,11 +1,10 @@
 const {Router} = require('express');
-
+const {CastIntQuery} = require('../middlewares');
 module.exports = function({ProductController}){
     const router = Router();
 
-    router.get('/',ProductController.getAll);
+    router.get('/',[CastIntQuery],ProductController.getAll);
     router.get('/:id',ProductController.get);
-    router.get('/categoria/',ProductController.getProductsByCategory);
     router.post('/',ProductController.create);
     router.put('/:id',ProductController.update);
     router.delete('/:id',ProductController.delete);

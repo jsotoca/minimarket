@@ -22,7 +22,7 @@ const productSchema = new Schema({
     imagen:{type:String,required:true},
     precio:{type:Number,required:[true,'el precio es requerido']},
     precio_oferta:{type:Number},
-    categoria:{type:Strig,enum:categorias,required:[true,'la categoria es requerida']},
+    categoria:{type:String,enum:categorias,required:[true,'la categoria es requerida']},
     estado:{type:Boolean,default:true}
 },{timestamps:true});
 

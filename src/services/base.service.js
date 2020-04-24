@@ -10,8 +10,8 @@ class BaseService{
         if(!data)_err(404,'data no encontrada');
         return data;
     }
-    async getAll(numPag,numSize){
-        const data = await this.repository.getAll(numPag,numSize);
+    async getAll(numPag,numSize,categoria){
+        const data = await this.repository.getAll(numPag,numSize,categoria);
         if(!data)_err(404,'data no encontrada');
         return data;
     }

@@ -1,6 +1,6 @@
 module.exports = {
     Errors:function(err,req,res,next){
-        const httpStatus = err.status;
+        const httpStatus = err.status || 500;
         return res.status(httpStatus).json({ok:false,message:err.message});
     },
     NotFound:function(req,res,next){

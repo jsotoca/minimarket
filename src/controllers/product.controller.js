@@ -6,24 +6,16 @@ class ProductController{
     }
     async get(req,res){
         const {id} = req.params;
-        const {body} = req;
         res.json({
             ok:true,
-            producto: await _ProductService
+            producto: await _ProductService.get(id)
         })
     }
     async getAll(req,res){
-        const {numPag,numSize} = req.query;
+        const {numPag,numSize,categoria} = req.query;
         res.json({
             ok:true,
-            producto: await _ProductService.getAll(numPag,numSize)
-        })
-    }
-    async getProductsByCategory(req,res){
-        const {category,numPag,numSize} = req.query;
-        res.json({
-            ok:true,
-            producto: await _ProductService.getProductsByCategory(category,numPag,numSize)
+            producto: await _ProductService.getAll(numPag,numSize,categoria)
         })
     }
     async create(req,res){
