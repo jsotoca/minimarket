@@ -3,6 +3,7 @@ let _ProductModel = null;
 
 class ProductRepository extends BaseRepository{
     constructor(ProductModel) {
+        super(ProductModel);
         _ProductModel = ProductModel;
     }
     async getProductsByCategory(category,numPag=1,numSize=5){

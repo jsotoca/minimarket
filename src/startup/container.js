@@ -6,7 +6,7 @@ const {ProductModel} = require('../models');
 // REPOSITORIES
 const {ProductRepository} = require('../repositories');
 // SERVICES
-const {} = require('');
+const {ProductService} = require('../services');
 // CONTROLLERS
 const {} = require('');
 // ROUTERS
@@ -21,6 +21,12 @@ container
     })
     .register({
         ProductModel:asValue(ProductModel)
+    })
+    .register({
+        ProductRepository:asClass(ProductRepository).singleton()
+    })
+    .register({
+        ProductService:asClass(ProductService).singleton()
     })
 
 module.exports = container;
