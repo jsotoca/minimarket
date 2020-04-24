@@ -5,7 +5,7 @@ const compression = require('compression');
 const {Errors,NotFound} = require('../middlewares');
 require('express-async-errors');
 
-module.exports = function({ProductRouter}){
+module.exports = function({ProductRouter,AdminBroRouter}){
     const router = express.Router();
     const apiRouter = express.Router();
 
@@ -18,6 +18,7 @@ module.exports = function({ProductRouter}){
 
     apiRouter.use('/producto',ProductRouter);
 
+    router.use('/admin',AdminBroRouter);
     router.use('/v1/api',apiRouter);
     router.use(Errors);
     router.use(NotFound);
