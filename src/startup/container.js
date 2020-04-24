@@ -7,13 +7,13 @@ const adminSpanish = require('../config/admin.spanish');
 // MODELS
 const {ProductModel,UserModel} = require('../models');
 // REPOSITORIES
-const {ProductRepository} = require('../repositories');
+const {ProductRepository,UserRepository} = require('../repositories');
 // SERVICES
-const {ProductService} = require('../services');
+const {ProductService,UserService} = require('../services');
 // CONTROLLERS
-const {ProductController} = require('../controllers');
+const {ProductController,UserController} = require('../controllers');
 // ROUTERS
-const {ProductRouter,AdminBroRouter} = require('../routers/index.router');
+const {ProductRouter,AdminBroRouter,UserRouter} = require('../routers/index.router');
 
 
 const container = createContainer();
@@ -30,17 +30,21 @@ container
         UserModel:asValue(UserModel)
     })
     .register({
-        ProductRepository:asClass(ProductRepository).singleton()
+        ProductRepository:asClass(ProductRepository).singleton(),
+        UserRepository:asClass(UserRepository).singleton(),
     })
     .register({
-        ProductService:asClass(ProductService).singleton()
+        ProductService:asClass(ProductService).singleton(),
+        UserService:asClass(UserService).singleton()
     })
     .register({
-        ProductController:asClass(ProductController.bind(ProductController)).singleton()
+        ProductController:asClass(ProductController.bind(ProductController)).singleton(),
+        UserController:asClass(UserController.bind(UserController)).singleton()
     })
     .register({
         ProductRouter:asFunction(ProductRouter).singleton(),
         AdminBroRouter:asFunction(AdminBroRouter).singleton(),
+        UserRouter:asFunction(UserRouter).singleton()
     })
 
 module.exports = container;

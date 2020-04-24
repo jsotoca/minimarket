@@ -10,6 +10,7 @@ const locale = {
     },
     buttons: {
       save: 'Guardar',
+      login: 'Ingresar',
       filter: 'Filtrar',
       applyChanges: 'Aplicar Cambios',
       resetFilter: 'Resetear',
@@ -26,7 +27,7 @@ const locale = {
       filters: 'Filtrados',
       adminVersion: 'Admin: {{version}}',
       appVersion: 'App: {{version}}',
-      loginWelcome: 'Bienvenido',
+      loginWelcome: 'Bienvenido a MARKET IN HOUSE',
     },
     properties: {
   
@@ -55,9 +56,9 @@ const locale = {
       noActionComponent: 'Tienes que implementar el componente de acción para tu acción',
       noRecordsInResource: 'No hay registros en este recurso',
       confirmDelete: 'Quieres eliminar realmente este item?',
+      loginWelcome: 'Estas por ingresar al Panel de Administración del mejor servicio de delivery en Chiclayo!.',
       welcomeOnBoard_title: 'Bienvenido al panel de administración!',
       welcomeOnBoard_subtitle: 'Ahora eres uno de nosotros! Preparamos algunos consejos para que comiences:',
-      loginWelcome: 'To AdminBro - the best admin framework for Node.js apps, based on React.',
       invalidCredentials: 'email y/o contraseña incorrecta.',
     },
   }
