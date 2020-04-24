@@ -10,7 +10,7 @@ const {ProductService} = require('../services');
 // CONTROLLERS
 const {ProductController} = require('../controllers');
 // ROUTERS
-const {} = require('');
+const {ProductRouter} = require('../routers/index.router');
 
 
 const container = createContainer();
@@ -30,6 +30,9 @@ container
     })
     .register({
         ProductController:asClass(ProductController.bind(ProductController)).singleton()
+    })
+    .register({
+        ProductRouter:asFunction(ProductRouter).singleton()
     })
 
 module.exports = container;
